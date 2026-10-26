@@ -122,6 +122,21 @@ body{background:#fbf6ef;color:#29170e}
 @media(max-width:780px){.hero-banner{grid-template-columns:1fr!important;min-height:620px!important;align-content:start;padding:27px!important}.hero-banner .hero-brand{font-size:clamp(76px,15vw,115px)!important}.hero-photo{min-height:390px!important;height:390px!important}.food-stage{inset:-12% -4% -10%}}
 @media(max-width:550px){.hero-banner{min-height:550px!important;padding:22px!important}.hero-banner .hero-brand{font-size:76px!important}.hero-photo{min-height:370px!important;height:370px!important}.food-stage{inset:-12% -8% -12%}}
 @media(prefers-reduced-motion:reduce){.food-piece{animation:none!important;--scroll:0px!important}}
+
+/* Helena: 3D editorial */
+.hero-banner{perspective:1200px;transform-style:preserve-3d;box-shadow:0 35px 75px #2c130d60!important}
+.hero-banner .hero-brand{transform:translateZ(55px);filter:drop-shadow(0 12px 12px #0006)}
+.hero-photo,.food-stage,.food-piece{transform-style:preserve-3d}
+.product{background:linear-gradient(145deg,#fffefa,#fff3e8);border:1px solid #f4ddc6!important;border-radius:26px!important;box-shadow:0 12px 0 #e4c7a8,0 30px 48px #68361930!important;transform:perspective(900px) rotateX(2deg)!important;transition:transform .4s,box-shadow .4s!important}
+.product:hover{transform:perspective(900px) rotateY(-5deg) translateY(-12px) scale(1.02)!important;box-shadow:0 18px 0 #e4c7a8,0 42px 60px #68361940!important}
+.product .photo{height:250px!important;background:radial-gradient(circle,#f8d6aa,#dba16a)!important}
+.product .photo img{transition:transform .7s!important}
+.product:hover .photo img{transform:scale(1.15) rotate(-2deg)!important}
+.product .info{padding:21px}
+.product .price{font-size:27px;font-weight:900}
+.section-title{font-size:clamp(29px,4vw,42px);letter-spacing:-1.5px;margin-top:45px}
+.panel{background:linear-gradient(145deg,#fffefa,#fff1e4);box-shadow:0 10px 0 #e7cdb0,0 28px 45px #68361929!important}
+@media(max-width:550px){.product .photo{height:185px!important}.product .info{padding:14px}.section-title{margin-top:30px}}
 </style></head><body>
 <header class="top"><div class="wrap"><div class="logo"><div><strong id="store-title">Helena</strong></div></div><button class="btn ghost" id="toggle-admin" aria-label="Configurações do cardápio" title="Configurações">⚙</button></div></header>
 <main class="wrap"><section id="shop-view"><div class="hero"><div class="hero-banner"><div><div class="hero-brand" id="hero-brand">Helena</div></div><div class="hero-photo" id="hero-photo" aria-label="Salgados em movimento"></div></div><h2 class="section-title">Escolha suas delícias</h2></div><div class="layout"><div><div id="products" class="grid"></div></div><aside><div class="panel"><h2>🛒 Seu pedido</h2><div id="cart-lines" class="muted">Escolha seus salgados para começar.</div><div class="line"><span>Taxa de entrega</span><span id="delivery-fee">A combinar</span></div><div class="line total"><span>Total</span><span id="cart-total">R$ 0,00</span></div><label for="customer">Seu nome *</label><input id="customer" placeholder="Como podemos chamar você?" autocomplete="name"><label for="address">Endereço de entrega *</label><textarea id="address" placeholder="Rua, número, bairro e referência"></textarea><div class="agree">🚚 Entrega a combinar · Taxa a combinar</div><label for="notes">Observações</label><textarea id="notes" placeholder="Alguma preferência? (opcional)"></textarea><div class="note" id="pix-note">💠 <strong>Pagamento por Pix</strong><div id="pix-details">A loja ainda não configurou a chave Pix.</div><button class="btn secondary" id="copy-pix" style="margin-top:9px">Copiar chave Pix</button><div class="small" style="margin-top:8px">Após pagar, envie o comprovante pelo WhatsApp.</div></div><button class="btn full" id="send-order" style="margin-top:14px">Enviar pedido pelo WhatsApp</button><p class="muted small">O WhatsApp abrirá com os detalhes. Anexe o comprovante manualmente.</p></div></aside></div></section>
